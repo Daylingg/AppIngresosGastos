@@ -9,7 +9,7 @@ const transactionSchema = z.object({
 
 export const TransactionForm = () => {
   const [description, setDescription] = useState('') //guarda lo q se hace si es compra, venta o cobro
-  const [amount, setAmount] = useState(0) //guarda los montos de entradas y salidas
+  const [amount, setAmount] = useState('') //guarda los montos de entradas y salidas
   const [error, setError] = useState({ description: '', amount: '' }) // Almacena los errores de validación
   const { addTransaction } = useGlobalState()
   const refDescription = useRef(null)
@@ -40,7 +40,7 @@ export const TransactionForm = () => {
       amount: +amount, //esto es para q el valor q se le pase aunque sea string lo ocnvierta en numero
     })
     setDescription('')
-    setAmount(0.0)
+    setAmount('')
     setError({ description: '', amount: '' })
 
     // Enfocar el campo de entrada de descripción
