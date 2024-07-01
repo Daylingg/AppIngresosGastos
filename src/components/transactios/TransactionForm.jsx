@@ -37,7 +37,7 @@ export const TransactionForm = () => {
     addTransaction({
       id: crypto.randomUUID(),
       description,
-      amount: +amount, //esto es para q el valor q se le pase aunque sea string lo ocnvierta en numero
+      amount: amountValue, //esto es para q el valor q se le pase aunque sea string lo ocnvierta en numero
     })
     setDescription('')
     setAmount('')
@@ -63,7 +63,7 @@ export const TransactionForm = () => {
         {error.description && <p className="text-red-500">{error.description}</p>}
         <input
           className="bg-zinc-600 text-white px-3 py-2 rounded-lg block mb-2 w-full"
-          type="number"
+          type="text"
           placeholder="00.00"
           step="0.01"
           onChange={(e) => {
