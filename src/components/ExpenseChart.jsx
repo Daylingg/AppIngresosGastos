@@ -5,10 +5,7 @@ import { useGlobalState } from '../context/GlobalState'
 export const ExpenseChart = () => {
   const { transactions } = useGlobalState()
 
-  const total = transactions.reduce(
-    (acc, transaction) => (acc += transaction.amount),
-    0
-  )
+  const total = transactions.reduce((acc, transaction) => (acc += transaction.amount), 0)
 
   //el total de ingresos lo buscamos si la transaccion es mayor q cero es positivo se le dice al acumulador q empieza en cero q agregue de la transaccion el monto
   const totalIncome = transactions
